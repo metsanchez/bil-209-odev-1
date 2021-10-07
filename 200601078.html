@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<h1> Metehan Yanık 200601078</h1>
+    <hr>
+    <p> WEB TABANLI PROGRAMLAMAYA GİRİŞ DERSİ - ÖDEV </p>
+    <hr>
+    <center><h1>4 İşlem Hesap Makinesi</h1></center>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 İŞLEM HESAP MAKİNESİ</title>
+  </head>
+  <body>
+      <style>
+        
+    div {
+  			border: 1px solid gray;
+  			padding: 8px;
+		}
+
+	h1 {
+  			text-align: center;
+ 			text-transform: uppercase;
+ 		 	color: black;
+		}
+
+	p	 {
+  			text-indent: 50px;
+  			text-align: justify;
+  			letter-spacing: 3px;
+	     }
+
+	a {
+  			text-decoration: none;
+  			color: #008CBA;
+	}    
+    body {
+  			background-color: rgba(120, 128, 270, 0.5);
+		 }
+    body {
+  			background-image: bakircay.edu.tr("1081218831.jpg");
+         }
+         
+    p.sign {border-style: inset;}
+    #page{
+        height: auto;
+        width: 400px;
+        background-color: DodgerBlue;
+        border-radius: 12px;
+        padding:21px;
+        margin: 0 auto;
+    }
+    .button{
+        padding: 12px;
+        margin: 2px;
+        width: 80px;
+    }
+    #esit{
+        height: 95px;
+    }
+    #sıfır{
+        width: 168px;
+    }
+    .text{
+        width: 336px;
+        position: relative;
+        left:4px;
+        height: 40px;
+        margin: 10px 0px;
+        border-radius: 5px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+        text-align: 20px;
+    }
+      </style>
+      <div id = "page">
+<form name="form">
+    <input type ="text" name="text" class="text">
+</form>
+<table>
+    <tr>
+     <td> <input type="button" class="button" onclick="sıfırla()"value="Sıfırla"></td>
+     <td> <input type="button" class="button" onclick="sil()"value="Sil"></td>
+     <td> <input type="button" class="button" onclick="islem('*')"value="ÇARP"></td>
+     <td> <input type="button" class="button" onclick="islem('/')"value="BÖL"></td>
+    </tr>
+    <tr>
+        <td> <input type="button" class="button" onclick="islem(7)"value="7"></td>
+        <td> <input type="button" class="button" onclick="islem(8)"value="8"></td>
+        <td> <input type="button" class="button" onclick="islem(9)"value="9"></td>
+        <td> <input type="button" class="button" onclick="islem('-')"value="ÇIKAR"></td>
+       </tr>
+       <tr>
+        <td> <input type="button" class="button" onclick="islem(4)"value="4"></td>
+        <td> <input type="button" class="button" onclick="islem(5)"value="5"></td>
+        <td> <input type="button" class="button" onclick="islem(6)"value="6"></td>
+        <td> <input type="button" class="button" onclick="islem('+')"value="TOPLA"></td>
+       </tr>
+       <tr>
+        <td> <input type="button" class="button" onclick="islem(1)"value="1"></td>
+        <td> <input type="button" class="button" onclick="islem(2)"value="2"></td>
+        <td> <input type="button" class="button" onclick="islem(3)"value="3"></td>
+        <td rowspan="2"> <input type="button" id="esit" class="button"  onclick="esittir()"value="="></td>
+       </tr>
+       <tr>
+        <td colspan="2"> <input type="button" class="button" id="sıfır" onclick="islem(0)"value="0"></td>
+        <td> <input type="button" class="button" onclick="islem('Coded by Metehan Yanık')"value="INFO"></td>
+       </tr>
+      
+</table>
+</div>
+<script>
+    function islem(number){
+        document.form.text.value=document.form.text.value + number;
+    }
+    function esittir(){
+        var kullan =document.form.text.value;
+        if(kullan) {
+            document.form.text.value=eval(kullan);
+        }
+    }
+    function sil() {
+        var exp = document.form.text.value;
+        document.form.text.value=exp.substring(0,exp.length -1);
+    }
+    function sıfırla(){
+        document.form.text.value= "";
+    }
+</script>
+<hr>
+  </body>
+
